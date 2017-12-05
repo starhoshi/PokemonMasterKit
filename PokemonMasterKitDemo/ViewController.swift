@@ -20,7 +20,36 @@ class ViewController: UIViewController {
         let nature: Nature = .calm
 
         let pokemon = Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature)
-        print(pokemon.attack)
+        print("nature: ", pokemon.nature.name)
+        print("hp: ", pokemon.hp)
+        print("attack: ", pokemon.attack)
+        print("defense: ", pokemon.defense)
+        print("specialAttack: ", pokemon.specialAttack)
+        print("specialDefense: ", pokemon.specialDefense)
+        print("speed: ", pokemon.speed)
+
+        print("----------------------------------")
+
+        pokemon.nature = .brave
+        print("nature: ", pokemon.nature.name)
+        print("hp: ", pokemon.hp)
+        print("attack: ", pokemon.attack)
+        print("defense: ", pokemon.defense)
+        print("specialAttack: ", pokemon.specialAttack)
+        print("specialDefense: ", pokemon.specialDefense)
+        print("speed: ", pokemon.speed)
+
+        print("----------------------------------")
+
+        pokemon.nature = .brave
+        pokemon.effortValues.hp = 252
+        pokemon.effortValues.speed = 252
+        print("hp: ", pokemon.hp)
+        print("attack: ", pokemon.attack)
+        print("defense: ", pokemon.defense)
+        print("specialAttack: ", pokemon.specialAttack)
+        print("specialDefense: ", pokemon.specialDefense)
+        print("speed: ", pokemon.speed)
     }
 
     override func didReceiveMemoryWarning() {

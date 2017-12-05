@@ -13,12 +13,6 @@ public protocol PokemonProtocol {
     var baseStats: BaseStats { get }
 }
 
-public class Test {
-    init() {
-
-    }
-}
-
 public class Pokemon {
     let name: String
     let baseStats: BaseStats
@@ -35,10 +29,35 @@ public class Pokemon {
         self.nature = nature
     }
 
+    var hp: Int {
+        let temp = Float((baseStats.hp * 2) + individualValues.hp + (effortValues.hp / 4)) * (Float(level) / 100)
+        return Int(temp) + level + 10
+    }
+
     var attack: Int {
-        let float = Float((baseStats.attack * 2) + individualValues.attack + (effortValues.attack / 4))
-        let base = Int((float * (Float(level) / 100)) + 5)
-        return Int(Float(base) * 1.0)
+        return calcStat(baseStat: baseStats.attack, individualValue: individualValues.attack, effortValue: effortValues.attack, natureEffectType: nature.effect.attack)
+    }
+
+    var defense: Int {
+        return calcStat(baseStat: baseStats.defense, individualValue: individualValues.defense, effortValue: effortValues.defense, natureEffectType: nature.effect.defense)
+    }
+
+    var specialAttack: Int {
+        return calcStat(baseStat: baseStats.specialAttack, individualValue: individualValues.specialAttack, effortValue: effortValues.specialAttack, natureEffectType: nature.effect.specialAttack)
+    }
+
+    var specialDefense: Int {
+        return calcStat(baseStat: baseStats.specialDefense, individualValue: individualValues.specialDefense, effortValue: effortValues.specialDefense, natureEffectType: nature.effect.specialDefense)
+    }
+
+    var speed: Int {
+        return calcStat(baseStat: baseStats.speed, individualValue: individualValues.speed, effortValue: effortValues.speed, natureEffectType: nature.effect.speed)
+    }
+
+    private func calcStat(baseStat: Int, individualValue: Int, effortValue: Int, natureEffectType: NatureEffectType) -> Int {
+        let temp1 = Float((baseStat * 2) + individualValue + (effortValue / 4))
+        let temp2 = Int((temp1 * (Float(level) / 100)) + 5)
+        return Int(Float(temp2) * natureEffectType.rawValue)
     }
 }
 
@@ -49,21 +68,6 @@ public protocol PokemonStatus {
     var specialAttack: Int { get }
     var specialDefense: Int { get }
     var speed: Int { get }
-}
-
-public enum StatusType {
-    case hp, attack, defense, specialAttack, specialDefense, speed
-}
-
-public enum Nature {
-    case calm
-
-    public var up: StatusType {
-        return .speed
-    }
-    public var down: StatusType {
-        return .attack
-    }
 }
 
 public class BaseStats: PokemonStatus {

@@ -17,6 +17,8 @@
 		324BF0251FD5B4BC00098BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324BF0241FD5B4BC00098BBA /* Assets.xcassets */; };
 		324BF0281FD5B4BC00098BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324BF0261FD5B4BC00098BBA /* LaunchScreen.storyboard */; };
 		324BF02D1FD5B4EB00098BBA /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF0151FD5B31C00098BBA /* Pokemon.swift */; };
+		324BF02F1FD6AC7A00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
+		324BF0311FD6EC0F00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		324BF0241FD5B4BC00098BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		324BF0271FD5B4BC00098BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324BF0291FD5B4BC00098BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		324BF02E1FD6AC7A00098BBA /* Nature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 				324BEFFE1FD5B28500098BBA /* PokemonMasterKit.h */,
 				324BEFFF1FD5B28500098BBA /* Info.plist */,
 				324BF0151FD5B31C00098BBA /* Pokemon.swift */,
+				324BF02E1FD6AC7A00098BBA /* Nature.swift */,
 			);
 			path = PokemonMasterKit;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324BF02F1FD6AC7A00098BBA /* Nature.swift in Sources */,
 				324BF0161FD5B31C00098BBA /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +291,7 @@
 			files = (
 				324BF0201FD5B4BC00098BBA /* ViewController.swift in Sources */,
 				324BF01E1FD5B4BC00098BBA /* AppDelegate.swift in Sources */,
+				324BF0311FD6EC0F00098BBA /* Nature.swift in Sources */,
 				324BF02D1FD5B4EB00098BBA /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
