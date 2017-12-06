@@ -20,6 +20,9 @@
 		324BF02F1FD6AC7A00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
 		324BF0311FD6EC0F00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
 		324BF0331FD8317700098BBA /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF0321FD8317700098BBA /* Battle.swift */; };
+		324BF0351FD83BD100098BBA /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF0341FD83BD100098BBA /* Rank.swift */; };
+		324BF0361FD83BFA00098BBA /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF0341FD83BD100098BBA /* Rank.swift */; };
+		324BF0371FD8405000098BBA /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF0321FD8317700098BBA /* Battle.swift */; };
 		AA1A86D51FD6F7ED0093C34F /* NatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A86D41FD6F7EC0093C34F /* NatureTests.swift */; };
 		AA1A86DA1FD776650093C34F /* StatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A86D91FD776650093C34F /* StatTests.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,7 @@
 		324BF0291FD5B4BC00098BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324BF02E1FD6AC7A00098BBA /* Nature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		324BF0321FD8317700098BBA /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		324BF0341FD83BD100098BBA /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		AA1A86D41FD6F7EC0093C34F /* NatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureTests.swift; sourceTree = "<group>"; };
 		AA1A86D91FD776650093C34F /* StatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,7 @@
 				324BEFFE1FD5B28500098BBA /* PokemonMasterKit.h */,
 				324BEFFF1FD5B28500098BBA /* Info.plist */,
 				324BF0151FD5B31C00098BBA /* Pokemon.swift */,
+				324BF0341FD83BD100098BBA /* Rank.swift */,
 				324BF02E1FD6AC7A00098BBA /* Nature.swift */,
 				324BF0321FD8317700098BBA /* Battle.swift */,
 			);
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324BF02F1FD6AC7A00098BBA /* Nature.swift in Sources */,
+				324BF0351FD83BD100098BBA /* Rank.swift in Sources */,
 				324BF0161FD5B31C00098BBA /* Pokemon.swift in Sources */,
 				324BF0331FD8317700098BBA /* Battle.swift in Sources */,
 			);
@@ -304,7 +310,9 @@
 				324BF0201FD5B4BC00098BBA /* ViewController.swift in Sources */,
 				324BF01E1FD5B4BC00098BBA /* AppDelegate.swift in Sources */,
 				324BF0311FD6EC0F00098BBA /* Nature.swift in Sources */,
+				324BF0361FD83BFA00098BBA /* Rank.swift in Sources */,
 				324BF02D1FD5B4EB00098BBA /* Pokemon.swift in Sources */,
+				324BF0371FD8405000098BBA /* Battle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

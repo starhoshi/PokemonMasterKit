@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pokemon = mew
+        let pokemon = pikachu
 
         print("nature: ", pokemon.nature.name)
         print("hp: ", pokemon.hp)
@@ -43,18 +43,21 @@ class ViewController: UIViewController {
         print("specialAttack: ", pokemon.specialAttack)
         print("specialDefense: ", pokemon.specialDefense)
         print("speed: ", pokemon.speed)
+
+        let battle = Battle(attackPokemon: megaKangaskhan, defensePokemon: pikachu)
+        print(battle.calculate())
     }
 
-    var mew: Pokemon {
-        let name = "Mew"
-        let baseStats = BaseStats(hp: 100, attack: 100, defense: 100, specialAttack: 100, specialDefense: 100, speed: 100)
+    var pikachu: Pokemon {
+        let name = "Pikachu"
+        let baseStats = BaseStats(hp: 35, attack: 55, defense: 40, specialAttack: 50, specialDefense: 50, speed: 90)
         let effortValues = EffortValues(hp: 0, attack: 0, defense: 0, specialAttack: 0, specialDefense: 0, speed: 0)
         let individualValues = IndividualValues(hp: 31, attack: 31, defense: 31, specialAttack: 31, specialDefense: 31, speed: 31)
-        let nature: Nature = .calm
-        let move: Move = .megaPunch
-        let ability: Ability = .synchronize
+        let nature: Nature = .docile
+        let move: Move = .bite
+        let ability: Ability = .synchronize // FIXME
 
-        return Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature, type1: .psychic, move1: move, ability: ability)
+        return Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature, type1: .electric, move: move, ability: ability)
     }
 
     // メガガルーラ
@@ -63,11 +66,11 @@ class ViewController: UIViewController {
         let baseStats = BaseStats(hp: 105, attack: 125, defense: 100, specialAttack: 60, specialDefense: 100, speed: 100)
         let effortValues = EffortValues(hp: 0, attack: 0, defense: 0, specialAttack: 0, specialDefense: 0, speed: 0)
         let individualValues = IndividualValues(hp: 31, attack: 31, defense: 31, specialAttack: 31, specialDefense: 31, speed: 31)
-        let nature: Nature = .calm
-        let move: Move = .powerUpPunch
+        let nature: Nature = .docile
+        let move: Move = .bite
         let ability: Ability = .parentalBond
 
-        return Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature, type1: .normal, move1: move, ability: ability)
+        return Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature, type1: .normal, move: move, ability: ability)
     }
 
     override func didReceiveMemoryWarning() {

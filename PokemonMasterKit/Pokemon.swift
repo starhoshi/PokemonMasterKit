@@ -18,14 +18,14 @@ public enum Ability {
 }
 
 public enum Move {
-    case megaPunch // メガトンパンチ
+    case bite // かみつく
     case powerUpPunch // グロウパンチ
 
 
     public var power: Int {
         switch self {
-        case .megaPunch:
-            return 80
+        case .bite:
+            return 60
         case .powerUpPunch:
             return 40
         }
@@ -37,8 +37,17 @@ public enum Move {
 
     public var category: Category {
         switch self {
-        case .megaPunch, .powerUpPunch:
+        case .bite, .powerUpPunch:
             return .physical
+        }
+    }
+
+    public var type: PokemonType {
+        switch self {
+        case .bite:
+            return .dark
+        case .powerUpPunch:
+            return .fight
         }
     }
 }
@@ -53,13 +62,23 @@ public protocol PokemonProtocol {
     var type1: PokemonType { get set }
     var type2: PokemonType? { get set }
     var ability: Ability { get set }
-    var move1: Move { get set }
-//    var move2: Move { get set }
-//    var move3: Move { get set }
-//    var move4: Move { get set }
+    var move: Move { get set }
+    var attackRank: Rank { get set }
+    var specialAttackRank: Rank { get set }
+//    var defenseRank: Rank { get set }
+//    var specialDefenseRank: Rank { get set }
+
+    var hp: Int { get }
+    var attack: Int { get }
+    var defense: Int { get }
+    var specialAttack: Int { get }
+    var specialDefense: Int { get }
+    var speed: Int { get }
+
+    func has(type: PokemonType) -> Bool
 }
 
-public class Pokemon {
+public class Pokemon: PokemonProtocol {
     public let name: String
     public let baseStats: BaseStats
     public var effortValues: EffortValues
@@ -69,9 +88,11 @@ public class Pokemon {
     public var type1: PokemonType
     public var type2: PokemonType?
     public var ability: Ability
-    public var move1: Move
+    public var move: Move
+    public var attackRank: Rank = .zero
+    public var specialAttackRank: Rank = .zero
 
-    public init(name: String, baseStats: BaseStats, effortValues: EffortValues, individualValues: IndividualValues, nature: Nature, type1: PokemonType, type2: PokemonType? = nil, move1: Move, ability: Ability) {
+    public init(name: String, baseStats: BaseStats, effortValues: EffortValues, individualValues: IndividualValues, nature: Nature, type1: PokemonType, type2: PokemonType? = nil, move: Move, ability: Ability) {
         self.name = name
         self.baseStats = baseStats
         self.effortValues = effortValues
@@ -79,7 +100,7 @@ public class Pokemon {
         self.nature = nature
         self.type1 = type1
         self.type2 = type2
-        self.move1 = move1
+        self.move = move
         self.ability = ability
     }
 
@@ -112,6 +133,10 @@ public class Pokemon {
         let temp1 = Float((baseStat * 2) + individualValue + (effortValue / 4))
         let temp2 = Int((temp1 * (Float(level) / 100)) + 5)
         return Int(Float(temp2) * natureEffectType.rawValue)
+    }
+
+    public func has(type: PokemonType) -> Bool {
+        return type1 == type || type2 == type
     }
 }
 
