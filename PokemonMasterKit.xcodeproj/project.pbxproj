@@ -20,6 +20,7 @@
 		324BF02F1FD6AC7A00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
 		324BF0311FD6EC0F00098BBA /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BF02E1FD6AC7A00098BBA /* Nature.swift */; };
 		AA1A86D51FD6F7ED0093C34F /* NatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A86D41FD6F7EC0093C34F /* NatureTests.swift */; };
+		AA1A86DA1FD776650093C34F /* StatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A86D91FD776650093C34F /* StatTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		324BF0291FD5B4BC00098BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324BF02E1FD6AC7A00098BBA /* Nature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		AA1A86D41FD6F7EC0093C34F /* NatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureTests.swift; sourceTree = "<group>"; };
+		AA1A86D91FD776650093C34F /* StatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				324BF00B1FD5B28500098BBA /* Info.plist */,
 				AA1A86D41FD6F7EC0093C34F /* NatureTests.swift */,
 				324BF0091FD5B28500098BBA /* PokemonMasterKitTests.swift */,
+				AA1A86D91FD776650093C34F /* StatTests.swift */,
 			);
 			path = PokemonMasterKitTests;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				AA1A86D51FD6F7ED0093C34F /* NatureTests.swift in Sources */,
 				324BF00A1FD5B28500098BBA /* PokemonMasterKitTests.swift in Sources */,
+				AA1A86DA1FD776650093C34F /* StatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
