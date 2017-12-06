@@ -33,18 +33,32 @@ public class Battle: Battleable {
         print("attacStat", attackStat)
         let defenseStat = calcDefenseStat()
         print("defenseStat", defenseStat)
-        let damages = calcDamage(attackStat: attackStat, defenseStat: defenseStat, power: Float(attackPokemon.move.power), calcCount: calcCount)
+        var damages = calcDamage(attackStat: attackStat, defenseStat: defenseStat, power: Float(attackPokemon.move.power), calcCount: calcCount)
+        print(damages)
+
+        if attackPokemon.ability == .parentalBond {
+            calcCount += 1
+            let attackStat = calcAttackStat(isParentalBoldAndPowerUpPunch: attackPokemon.move == .powerUpPunch)
+            print("attacStat", attackStat)
+            let defenseStat = calcDefenseStat()
+            print("defenseStat", defenseStat)
+            let parentalBondDamages = calcDamage(attackStat: attackStat, defenseStat: defenseStat, power: Float(attackPokemon.move.power), calcCount: calcCount)
+            print(parentalBondDamages)
+            for (i, d) in parentalBondDamages.enumerated() {
+                damages[i] += d
+            }
+        }
 
         return damages
     }
 
-    private func calcAttackStat() -> Float {
+    private func calcAttackStat(isParentalBoldAndPowerUpPunch: Bool = false) -> Float {
         var stat: Int
         var rank: Rank
         switch attackPokemon.move.category {
         case .physical:
             stat = attackPokemon.attack
-            rank = attackPokemon.attackRank
+            rank = isParentalBoldAndPowerUpPunch ? attackPokemon.attackRank.up : attackPokemon.attackRank
         case .special:
             stat = attackPokemon.specialAttack
             rank = attackPokemon.specialAttackRank
@@ -71,26 +85,26 @@ public class Battle: Battleable {
 
     private func calcDamage(attackStat: Float, defenseStat: Float, power: Float, calcCount: Int) -> [Int] {
         let level = floorf((Float(attackPokemon.level * 2) / 5.0) + 2.0)
-        var baseDamage = floorf(
+        let baseDamage = floorf(
             floorf(
                 (level * attackStat * power) / defenseStat
             ) / 50
         ) + 2.0
 
-
-        if attackPokemon.ability == .parentalBond && calcCount == 2 {
-            baseDamage = pokeRound(baseDamage * 0.25)
-        }
-
-        if attackPokemon.has(type: attackPokemon.move.type) {
-            baseDamage = pokeRound(baseDamage * 1.5)
-        }
-
         var damages: [Int] = []
         for i in 0...15 {
-            var d: Float = floor(baseDamage * Float(85 + i) / 100.0)
-            if d < 1 { d = 1 }
-            damages.append(Int(d))
+            var damage: Float = floor(baseDamage * Float(85 + i) / 100.0)
+
+            if attackPokemon.has(type: attackPokemon.move.type) {
+                damage = pokeRound(damage * 1.5)
+            }
+
+            if attackPokemon.ability == .parentalBond && calcCount == 2 {
+                damage = pokeRound(damage * 0.25)
+            }
+
+            if damage < 1 { damage = 1 }
+            damages.append(Int(damage))
         }
 
         return damages
