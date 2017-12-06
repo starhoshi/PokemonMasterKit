@@ -30,20 +30,14 @@ public class Battle: Battleable {
         var calcCount = 1
 
         let attackStat = calcAttackStat()
-        print("attacStat", attackStat)
         let defenseStat = calcDefenseStat()
-        print("defenseStat", defenseStat)
         var damages = calcDamage(attackStat: attackStat, defenseStat: defenseStat, power: Float(attackPokemon.move.power), calcCount: calcCount)
-        print(damages)
 
         if attackPokemon.ability == .parentalBond {
             calcCount += 1
             let attackStat = calcAttackStat(isParentalBoldAndPowerUpPunch: attackPokemon.move == .powerUpPunch)
-            print("attacStat", attackStat)
             let defenseStat = calcDefenseStat()
-            print("defenseStat", defenseStat)
             let parentalBondDamages = calcDamage(attackStat: attackStat, defenseStat: defenseStat, power: Float(attackPokemon.move.power), calcCount: calcCount)
-            print(parentalBondDamages)
             for (i, d) in parentalBondDamages.enumerated() {
                 damages[i] += d
             }
