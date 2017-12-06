@@ -8,6 +8,41 @@
 
 import Foundation
 
+public enum PokemonType {
+    case normal, fire, water, electric, grass, ice, fight, poison, ground, flying, psychic, bug, rock, ghost, dragon, dark, steel, fairy
+}
+
+public enum Ability {
+    case parentalBond // おやこあい
+    case synchronize // シンクロ
+}
+
+public enum Move {
+    case megaPunch // メガトンパンチ
+    case powerUpPunch // グロウパンチ
+
+
+    public var power: Int {
+        switch self {
+        case .megaPunch:
+            return 80
+        case .powerUpPunch:
+            return 40
+        }
+    }
+
+    public enum Category {
+        case physical, special, status
+    }
+
+    public var category: Category {
+        switch self {
+        case .megaPunch, .powerUpPunch:
+            return .physical
+        }
+    }
+}
+
 public protocol PokemonProtocol {
     var name: String { get }
     var baseStats: BaseStats { get }
@@ -15,6 +50,13 @@ public protocol PokemonProtocol {
     var individualValues: IndividualValues { get set }
     var nature: Nature { get set }
     var level: Int { get set }
+    var type1: PokemonType { get set }
+    var type2: PokemonType? { get set }
+    var ability: Ability { get set }
+    var move1: Move { get set }
+//    var move2: Move { get set }
+//    var move3: Move { get set }
+//    var move4: Move { get set }
 }
 
 public class Pokemon {
@@ -24,13 +66,21 @@ public class Pokemon {
     public var individualValues: IndividualValues
     public var nature: Nature
     public var level: Int = 50
+    public var type1: PokemonType
+    public var type2: PokemonType?
+    public var ability: Ability
+    public var move1: Move
 
-    public init(name: String, baseStats: BaseStats, effortValues: EffortValues, individualValues: IndividualValues, nature: Nature) {
+    public init(name: String, baseStats: BaseStats, effortValues: EffortValues, individualValues: IndividualValues, nature: Nature, type1: PokemonType, type2: PokemonType? = nil, move1: Move, ability: Ability) {
         self.name = name
         self.baseStats = baseStats
         self.effortValues = effortValues
         self.individualValues = individualValues
         self.nature = nature
+        self.type1 = type1
+        self.type2 = type2
+        self.move1 = move1
+        self.ability = ability
     }
 
     public var hp: Int {
