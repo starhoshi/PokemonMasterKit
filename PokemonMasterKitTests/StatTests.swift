@@ -33,7 +33,7 @@ class StatTests: XCTestCase {
         return IndividualValues(hp: 31, attack: 31, defense: 31, specialAttack: 31, specialDefense: 31, speed: 31)
     }
     
-    func testおだやかミュウ無振() {
+    func testミュウ無振() {
         let name = "ミュウ"
         let baseStats = stat(100, 100, 100, 100, 100, 100)
         let effortValues = effort()
