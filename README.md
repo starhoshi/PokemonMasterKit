@@ -4,7 +4,8 @@
 [![Build Status](https://travis-ci.org/starhoshi/PokemonMasterKit.svg?branch=master)](https://travis-ci.org/starhoshi/PokemonMasterKit)
 
 Pokemon utility library for Swift.
-Aim to Be a Pokémon Master.
+
+Aim to Be a Pokémon Master!
 
 # Usage
 
