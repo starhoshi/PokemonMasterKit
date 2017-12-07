@@ -38,9 +38,11 @@ class StatTests: XCTestCase {
         let baseStats = stat(100, 100, 100, 100, 100, 100)
         let effortValues = effort()
         let individualValues = maxIndividualValues()
-        let nature: Nature = .calm
+        let nature: Nature = .docile
+        let move: Move = .bite
+        let ability: Ability = .synchronize // FIXME
 
-        let pokemon = Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature)
+        let pokemon = Pokemon(name: name, baseStats: baseStats, effortValues: effortValues, individualValues: individualValues, nature: nature, type1: .electric, move: move, ability: ability)
         pokemon.level = 50
 
         //いじっぱり
