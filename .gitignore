@@ -1,6 +1,7 @@
 # Custom
 UserInterfaceState.xcuserstate
 *.swp
+fastlane/test_output/*
 
 ### https://raw.github.com/github/gitignore/dc0ca6d8d5e61dae1bd051f9a99c1414890069f6/Global/macOS.gitignore
 
