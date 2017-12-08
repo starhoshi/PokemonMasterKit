@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = "PokemonMasterKit"
-  s.version            = "0.0.1"
+  s.version            = "0.0.2"
   s.summary            = "Pokemon Utility Library"
   s.description        = "Pokemon Utility Library written in Swift."
   s.homepage           = "https://github.com/starhoshi/PokemonMasterKit"
